@@ -70,6 +70,7 @@ class DbusDeyeSunG3Service:
 
         # last update
         self._lastUpdate = 0
+        self._countNoUpdate = 0;
 
         # add _update function 'timer'
         # pause x ms before the next request
@@ -281,10 +282,19 @@ class DbusDeyeSunG3Service:
             self._lastUpdate = time.time()
         except Exception as e:
             logging.critical('Error at %s', '_update', exc_info=e)
-
+            
             try:
                 if self._lastUpdate < (time.time() - 5 * 60):
                     self._dbusservice['/Connected'] = 0
+                    self._dbusservice['/Ac/Power'] = 0
+                    self._dbusservice['/Ac/Energy/Forward'] = 0
+                    self._dbusservice['/Ac/Current'] = 0
+                    self._dbusservice['/Ac/L1/Current'] = 0
+                    self._dbusservice['/Ac/L2/Current'] = 0
+                    self._dbusservice['/Ac/L3/Current'] = 0
+                    self._dbusservice['/Ac/L1/Power'] = 0
+                    self._dbusservice['/Ac/L2/Power'] = 0
+                    self._dbusservice['/Ac/L3/Power'] = 0
             except Exception as e:
                 logging.critical('Error at %s', '_update', exc_info=e)
  

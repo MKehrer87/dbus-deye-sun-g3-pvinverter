@@ -287,7 +287,7 @@ class DbusDeyeSunG3Service:
                 if self._lastUpdate < (time.time() - 5 * 60):
                     self._dbusservice['/Connected'] = 0
                     self._dbusservice['/Ac/Power'] = 0
-                    self._dbusservice['/Ac/Energy/Forward'] = 0
+                    #self._dbusservice['/Ac/Energy/Forward'] = 0
                     self._dbusservice['/Ac/Current'] = 0
                     self._dbusservice['/Ac/L1/Current'] = 0
                     self._dbusservice['/Ac/L2/Current'] = 0

@@ -1,0 +1,11 @@
+[DEFAULT]
+Address=192.168.8.198
+Serial=3842648766
+FirmwareVersion=1.53
+Port=8899
+Phase=L1
+SignOfLifeLog = 1
+Deviceinstance=51
+CustomName=Deye Sun 2000 G4
+Position=0
+UpdateInterval=60

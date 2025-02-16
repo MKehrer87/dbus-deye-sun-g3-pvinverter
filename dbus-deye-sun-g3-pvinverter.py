@@ -28,7 +28,7 @@ class DbusDeyeSunG3Service:
         config = self._getConfig()
         deviceinstance = int(config['DEFAULT']['Deviceinstance'])
         customname = config['DEFAULT']['CustomName']
-
+        
         self._dbusservice = VeDbusService(
             "{}.tcp_{:02d}".format(servicename, deviceinstance))
         self._paths = paths
